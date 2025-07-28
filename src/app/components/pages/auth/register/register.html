@@ -1,38 +1,85 @@
-<!-- Page Container -->
-<div class="min-h-screen bg-white relative overflow-hidden flex flex-col px-6 py-4">
+<!-- Main Page Container -->
+<div class="min-h-screen bg-white relative flex items-center justify-center px-4 py-10">
 
-  <!-- 🎨 Background Illustration (from public folder) -->
+  <!-- 🎨 Background Illustration -->
   <img
     src="/Images/learning.svg"
-    alt="Learning Illustration"
-    class="absolute bottom-0 right-0 w-[40%] max-w-[500px] opacity-20 pointer-events-none select-none"
+    alt="Background illustration"
+    class="absolute bottom-0 right-0 w-[40%] max-w-[400px] opacity-20 pointer-events-none select-none hidden md:block"
   />
 
-  <!-- App Title: Top Left -->
-  <div class="text-left mb-6 z-10">
-    <h1 class="text-lg font-bold">EnaaApp</h1>
-  </div>
+  <!-- Inner Content (Centered Card) -->
+  <div class="w-full max-w-md z-10">
 
-  <!-- Main Content -->
-  <div class="flex flex-col items-center justify-center flex-1 text-center space-y-6 z-10">
-    <h2 class="text-xl font-semibold">Join as a Learner or Teacher</h2>
+    <!-- 🔹 App Name (Centered Top) -->
+    <div class="text-center mb-6">
+      <h1 class="text-2xl font-bold">EnaaApp</h1>
+    </div>
 
-    <div class="flex space-x-6">
-      <button
-        class="bg-blue-300 text-black font-semibold rounded-lg text-lg w-40 h-20 hover:bg-blue-400 transition">
-        I'm a Learner
+    <!-- 🔹 Title -->
+    <div class="text-center mb-4">
+      <h2 class="text-xl font-semibold">Sign up</h2>
+    </div>
+
+    <!-- 🔹 Social Buttons -->
+    <div class="flex justify-between mb-4">
+      <button class="border border-black rounded-full px-4 py-2 text-sm w-[48%]">
+        Connecter Avec Apple
       </button>
-      <button
-        class="bg-blue-300 text-black font-semibold rounded-lg text-lg w-40 h-20 hover:bg-blue-400 transition">
-        I'm a Teacher
+      <button class="border border-black rounded-full px-4 py-2 text-sm w-[48%]">
+        Connecter Avec Google
       </button>
     </div>
 
-    <button class="bg-blue-300 text-black font-medium py-2 px-8 rounded-full hover:bg-blue-400 transition">
-      Apply
-    </button>
+    <!-- 🔹 Divider -->
+    <div class="flex items-center justify-center my-4">
+      <hr class="w-1/4 border-black" />
+      <span class="px-2 text-sm font-medium">Or</span>
+      <hr class="w-1/4 border-black" />
+    </div>
 
-    <p class="text-sm">
+    <!-- 🔹 Form -->
+    <form class="space-y-4 text-sm text-black font-medium">
+
+      <!-- Name Fields -->
+      <div class="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+        <div class="flex flex-col w-full md:w-1/2">
+          <label class="mb-1">First Name</label>
+          <input type="text" class="bg-blue-300 px-4 py-2 rounded-md" />
+        </div>
+        <div class="flex flex-col w-full md:w-1/2">
+          <label class="mb-1">Last Name</label>
+          <input type="text" class="bg-blue-300 px-4 py-2 rounded-md" />
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="flex flex-col">
+        <label class="mb-1">Email</label>
+        <input type="email" class="bg-blue-300 px-4 py-2 rounded-md" />
+      </div>
+
+      <!-- Password -->
+      <div class="flex flex-col">
+        <label class="mb-1">Password</label>
+        <input type="password" class="bg-blue-300 px-4 py-2 rounded-md" />
+      </div>
+
+      <!-- Role Title -->
+      <p class="text-center pt-2">Join as a Learner or Teacher</p>
+
+      <!-- Role Buttons -->
+      <div class="flex justify-between">
+        <button type="button" class="bg-blue-300 px-4 py-3 rounded-lg font-medium w-[48%]">I'm a Learner</button>
+        <button type="button" class="bg-blue-300 px-4 py-3 rounded-lg font-medium w-[48%]">I'm a Teacher</button>
+      </div>
+
+      <!-- Apply Button -->
+      <button type="submit" class="w-full bg-blue-300 px-6 py-2 rounded-full font-semibold">Apply</button>
+    </form>
+
+    <!-- 🔹 Login Redirect -->
+    <p class="text-center text-sm mt-4">
       Already have an account?
       <a href="#" class="text-blue-400 hover:underline">Log In</a>
     </p>
