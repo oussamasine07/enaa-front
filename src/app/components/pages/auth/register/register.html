@@ -1,1 +1,97 @@
-<p>register works!</p>
+<!-- Main Page Container -->
+<div class="min-h-screen bg-white relative flex items-center justify-center px-4 py-10 overflow-hidden">
+
+  <!-- 🎨 Background Illustration -->
+  <img
+    src="/Images/learning.svg"
+    alt="Background illustration"
+    class="absolute bottom-0 right-0 w-[40%] max-w-[400px] opacity-20 pointer-events-none select-none hidden md:block animate-fade-in"
+  />
+
+  <!-- Inner Content (Centered Card) -->
+  <div class="w-full max-w-md z-10 animate-slide-up opacity-0">
+
+    <!-- 🔹 App Name (Centered Top) -->
+    <div class="text-center mb-6">
+      <h1 class="text-2xl font-bold">EnaaApp</h1>
+    </div>
+
+    <!-- 🔹 Title -->
+    <div class="text-center mb-4">
+      <h2 class="text-xl font-semibold">Sign up</h2>
+    </div>
+
+    <!-- 🔹 Form -->
+    <form class="space-y-4 text-sm text-black font-medium">
+
+      <!-- Name Fields -->
+      <div class="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+        <div class="flex flex-col w-full md:w-1/2">
+          <label class="mb-1">First Name</label>
+          <input type="text" class="bg-blue-300 px-4 py-2 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <div class="flex flex-col w-full md:w-1/2">
+          <label class="mb-1">Last Name</label>
+          <input type="text" class="bg-blue-300 px-4 py-2 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="flex flex-col">
+        <label class="mb-1">Email</label>
+        <input type="email" class="bg-blue-300 px-4 py-2 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <!-- Password -->
+      <div class="flex flex-col">
+        <label class="mb-1">Password</label>
+        <input type="password" class="bg-blue-300 px-4 py-2 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <!-- Role Title -->
+      <p class="text-center pt-2">Join as a Learner or Teacher</p>
+
+      <!-- Role Buttons -->
+      <div class="flex justify-between">
+        <button type="button" class="bg-blue-300 px-4 py-3 rounded-lg font-medium w-[48%] hover:bg-blue-400 hover:scale-105 transition duration-300">
+          I'm a Learner
+        </button>
+        <button type="button" class="bg-blue-300 px-4 py-3 rounded-lg font-medium w-[48%] hover:bg-blue-400 hover:scale-105 transition duration-300">
+          I'm a Teacher
+        </button>
+      </div>
+
+      <!-- Apply Button -->
+      <button type="submit" class="w-full bg-blue-300 px-6 py-2 rounded-full font-semibold hover:bg-blue-400 hover:scale-[1.03] transition duration-300">
+        Apply
+      </button>
+    </form>
+
+    <!-- 🔹 Login Redirect -->
+    <p class="text-center text-sm mt-4">
+      Already have an account?
+      <a href="#" class="text-blue-400 hover:underline">Log In</a>
+    </p>
+  </div>
+
+  <!-- ✨ Animations (Tailwind custom) -->
+  <style>
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes slide-up {
+      from { transform: translateY(30px); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
+    }
+
+    .animate-fade-in {
+      animation: fade-in 1.2s ease-out forwards;
+    }
+
+    .animate-slide-up {
+      animation: slide-up 1s ease-out forwards;
+    }
+  </style>
+</div>
