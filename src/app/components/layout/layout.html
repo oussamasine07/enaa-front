@@ -1,4 +1,4 @@
-<div class="bg-gray-100 h-screen overflow-hidden">
+<div class=" h-screen overflow-hidden">
     <div class="flex h-full">
         <aside id="sidebar" class="bg-[#F2EAE1] px-4 w-64 flex-shrink-0 fixed md:relative transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out min-h-screen z-40">
             <div class="logo capitalize font-bold ml-4 my-6 relative">Enaa app</div>
@@ -66,11 +66,11 @@
             </div>
         </aside>
 
-        <div class="flex-1 flex flex-col h-full">
-            <nav id="navbar" class="w-full border border-gray-900 py-4 px-6 flex justify-between items-center">
-                <div class="icon w-8 h-8 border border-gray-900 flex justify-center items-center rounded-full rotate-180">
+        <div class="flex-1 flex flex-col h-full relative">
+            <nav id="navbar" class="w-full py-4 px-6 flex justify-between items-center">
+                <button class="icon w-8 h-8 border border-gray-900 flex justify-center items-center rounded-full rotate-180 cursor-pointer">
                     <i class="fa-solid fa-play ml-1"></i>
-                </div>
+                </button>
 
                 <div class="right-nav flex items-center">
                     <input type="text" placeholder="search" class="py-1 px-4 border border-gray-400 placeholder:text-gray-600 rounded-md">
@@ -82,7 +82,38 @@
             </nav>
 
             <div class="flex-1 overflow-y-auto p-6">
-                this app content
+                <div class="dashboard">
+                    <div class="statistic-cards grid grid-cols-4 gap-4">
+                        <div class="learner col-span-1 rounded-lg p-3 bg-[#F0F9FF]">
+                            <i class="fa-solid fa-graduation-cap mr-3 text-2xl text-[#74C1ED]"></i>
+                            <div class="text-xl my-3">Apprenents</div>
+                            <div class="flex justify-end items-center">
+                                <p class="text-4xl font-bold">243</p>
+                            </div>
+                        </div>
+                        <div class="learner col-span-1 rounded-lg p-3 bg-[#FEF6FB]">
+                            <i class="fa-solid fa-tag mr-3 text-2xl text-[#EE95C5]"></i>
+                            <div class="text-xl my-3">Briefs</div>
+                            <div class="flex justify-end items-center">
+                                <p class="text-4xl font-bold">13</p>
+                            </div>
+                        </div>
+                        <div class="learner col-span-1 rounded-lg p-3 bg-[#FEFBEC]">
+                            <i class="fas fa-tools mr-3 text-2xl text-[#F6C762]"></i>
+                            <div class="text-xl my-3">Competance</div>
+                            <div class="flex justify-end items-center">
+                                <p class="text-4xl font-bold">100</p>
+                            </div>
+                        </div>
+                        <div class="learner col-span-1 rounded-lg p-3 bg-gradient-to-tr from-[#FEAF00] to-[#F8D442] text-white">
+                            <i class="fa-solid fa-users mr-3 text-2xl"></i>
+                            <div class="text-xl my-3">Users</div>
+                            <div class="flex justify-end items-center">
+                                <p class="text-4xl font-bold">300</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
