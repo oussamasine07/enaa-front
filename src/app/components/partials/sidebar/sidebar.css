@@ -1,0 +1,19 @@
+.logo::before {
+    content: "";
+    width: 3px;
+    height: 80%;
+    background-color: #F8D442;
+    position: absolute;
+    left: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+.profile-image-wrapper {
+    border-radius: 40%;
+}
+
+.profile-img {
+    border-radius: 50%;
+}
