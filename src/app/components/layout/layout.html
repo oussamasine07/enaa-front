@@ -67,9 +67,19 @@
         </aside>
 
         <div class="flex-1 flex flex-col h-full">
-            <aside id="navbar" class="">
-                navbar
-            </aside>
+            <nav id="navbar" class="w-full border border-gray-900 py-4 px-6 flex justify-between items-center">
+                <div class="icon w-8 h-8 border border-gray-900 flex justify-center items-center rounded-full rotate-180">
+                    <i class="fa-solid fa-play ml-1"></i>
+                </div>
+
+                <div class="right-nav flex items-center">
+                    <input type="text" placeholder="search" class="py-1 px-4 border border-gray-400 placeholder:text-gray-600 rounded-md">
+
+                    <button class="notification ml-5 text-xl cursor-pointer">
+                        <i class="fa-regular fa-bell"></i>
+                    </button>
+                </div>
+            </nav>
 
             <div class="flex-1 overflow-y-auto p-6">
                 this app content
