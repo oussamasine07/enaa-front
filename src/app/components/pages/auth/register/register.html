@@ -22,30 +22,30 @@
     </div>
 
     <!-- 🔹 Form -->
-    <form class="space-y-4 text-sm text-black font-medium">
+    <form class="space-y-4 text-sm text-black font-medium" #registerForm (ngSubmit)="onRegisterSubmit(registerForm)">
 
       <!-- Name Fields -->
       <div class="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
         <div class="flex flex-col w-full md:w-1/2">
           <label class="mb-1">First Name</label>
-          <input type="text" class="bg-blue-300 px-4 py-2 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <input type="text" class="bg-blue-300 px-4 py-2 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" name="firstName" [(ngModel)]="registerObj.firstName" />
         </div>
         <div class="flex flex-col w-full md:w-1/2">
           <label class="mb-1">Last Name</label>
-          <input type="text" class="bg-blue-300 px-4 py-2 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <input type="text" class="bg-blue-300 px-4 py-2 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" name="lastName" [(ngModel)]="registerObj.lastName" />
         </div>
       </div>
 
       <!-- Email -->
       <div class="flex flex-col">
         <label class="mb-1">Email</label>
-        <input type="email" class="bg-blue-300 px-4 py-2 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <input type="email" class="bg-blue-300 px-4 py-2 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" name="email" [(ngModel)]="registerObj.email"/>
       </div>
 
       <!-- Password -->
       <div class="flex flex-col">
         <label class="mb-1">Password</label>
-        <input type="password" class="bg-blue-300 px-4 py-2 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <input type="password" class="bg-blue-300 px-4 py-2 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" name="password" [(ngModel)]="registerObj.password" />
       </div>
 
       <!-- Role Title -->
@@ -53,11 +53,20 @@
 
       <!-- Role Buttons -->
       <div class="flex justify-between">
-        <button type="button" class="bg-blue-300 px-4 py-3 rounded-lg font-medium w-[48%] hover:bg-blue-400 hover:scale-105 transition duration-300">
+        <button 
+        type="button" 
+        (click)="setRole('learner')"
+        class="bg-blue-300 px-4 py-3 rounded-lg font-medium w-[48%] hover:bg-blue-400 hover:scale-105 transition duration-300"
+        [ngClass]="{'bg-blue-500 text-white': registerObj.role === 'learner'}">
           I'm a Learner
         </button>
-        <button type="button" class="bg-blue-300 px-4 py-3 rounded-lg font-medium w-[48%] hover:bg-blue-400 hover:scale-105 transition duration-300">
-          I'm a Teacher
+
+        <button 
+        type="button"
+        (click)="setRole('coach')"
+         class="bg-blue-300 px-4 py-3 rounded-lg font-medium w-[48%] hover:bg-blue-400 hover:scale-105 transition duration-300"
+         [ngClass]="{'bg-blue-500 text-white': registerObj.role === 'Coach'}">
+          I'm a Coach
         </button>
       </div>
 
