@@ -1,0 +1,65 @@
+.all {
+      font-family: Arial, sans-serif;
+      
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 700px;
+      padding: 25px;
+      
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    select, textarea, input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .link-input {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .link-input input[type="text"] {
+      flex: 1;
+    }
+
+    .plus-icon {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      background-color: #e6a823;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 32px;
+      font-size: 20px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #e6a823;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #eadd53;
+    }
