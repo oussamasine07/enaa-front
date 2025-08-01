@@ -11,6 +11,10 @@ export class SkillService {
 
   httpClient: HttpClient = inject(HttpClient);
 
+  listAllSkills () {
+    return this.httpClient.get<Skill[]>("http://localhost:8082/api/v1/skill");
+  }
+
   createSkill (body: skillForm): Observable<Skill> {
     return this.httpClient.post<Skill>("http://localhost:8082/api/v1/skill", body)
             .pipe(
