@@ -5,80 +5,89 @@
     <form [formGroup]="briefForm" (ngSubmit)="onSubmit()" class="brief-form">
       <div class="form-row">
         <div class="form-group">
-          <input 
-            type="text" 
-            id="titre" 
-            formControlName="titre"
+          <input
+            type="text"
+            id="title"
+            formControlName="title"
             class="form-input"
-            placeholder="Titre"
+            placeholder="Title"
           >
+          <div class="error" *ngIf="getFieldError('title')">{{ getFieldError('title') }}</div>
         </div>
-        
+
         <div class="form-group">
-          <input 
-            type="text" 
-            id="engagement" 
+          <label for="engagement" class="sr-only">Engagement</label>
+          <select
+            id="engagement"
             formControlName="engagement"
             class="form-input"
-            placeholder="Engagement"
           >
+            <option value="" disabled selected>Select Engagement</option>
+            <option *ngFor="let eng of engagements" [value]="eng">{{ eng }}</option>
+          </select>
+          <div class="error" *ngIf="getFieldError('engagement')">{{ getFieldError('engagement') }}</div>
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group">
-          <input 
-            type="text" 
-            id="dateDebut" 
-            formControlName="dateDebut"
+          <input
+            type="text"
+            id="startDate"
+            formControlName="startDate"
             class="form-input"
-            placeholder="Date de début"
+            placeholder="Start Date"
             onfocus="(this.type='date')"
             onblur="if(!this.value)this.type='text'"
           >
+          <div class="error" *ngIf="getFieldError('startDate')">{{ getFieldError('startDate') }}</div>
         </div>
-        
+
         <div class="form-group">
-          <input 
-            type="text" 
-            id="dateFin" 
-            formControlName="dateFin"
+          <input
+            type="text"
+            id="endDate"
+            formControlName="endDate"
             class="form-input"
-            placeholder="Date de fin"
+            placeholder="End Date"
             onfocus="(this.type='date')"
             onblur="if(!this.value)this.type='text'"
           >
+          <div class="error" *ngIf="getFieldError('endDate')">{{ getFieldError('endDate') }}</div>
         </div>
       </div>
 
       <div class="form-group">
-        <textarea 
-          id="description" 
+        <textarea
+          id="description"
           formControlName="description"
           class="form-textarea"
           rows="8"
           placeholder="Description"
         ></textarea>
+        <div class="error" *ngIf="getFieldError('description')">{{ getFieldError('description') }}</div>
       </div>
 
       <div class="form-row duration-row">
         <div class="form-group duration-group">
-          <input 
-            type="text" 
-            id="duree" 
-            formControlName="duree"
+          <input
+            type="number"
+            id="duration"
+            formControlName="duration"
             class="form-input"
-            placeholder="Durée"
+            placeholder="Duration"
+            min="1"
           >
+          <div class="error" *ngIf="getFieldError('duration')">{{ getFieldError('duration') }}</div>
         </div>
       </div>
 
-      <button 
-        type="submit" 
+      <button
+        type="submit"
         class="btn-create"
         [disabled]="isSubmitting"
       >
-        <span *ngIf="!isSubmitting">Cree</span>
+        <span *ngIf="!isSubmitting">Créer</span>
         <span *ngIf="isSubmitting">Création...</span>
       </button>
     </form>
