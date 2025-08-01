@@ -1,0 +1,24 @@
+<div class="bg-white p-6 rounded shadow max-w-md mx-auto">
+  <h2 class="text-xl font-semibold mb-4"> Add a new skill</h2>
+
+  <form  #skillForm (ngSubmit)="onSubmitSkill(skillForm)" >
+    <div class="mb-4">
+      <label class="block text-gray-700">Skill name</label>
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="skillFormObj.name"
+        required
+        class="w-full border rounded px-3 py-2"
+      />
+    </div>
+    
+
+    <button
+      type="submit"
+      class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded"
+    >
+      add skill
+    </button>
+  </form>
+</div>
