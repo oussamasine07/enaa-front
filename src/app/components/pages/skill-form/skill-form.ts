@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { skillForm } from '../../../models/types/skill-form';
 import { SkillService } from '../../../services/skill/SkillService';
 import { Skill } from '../../../models/interfaces/skill';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-skill-form',
@@ -14,6 +15,7 @@ import { Skill } from '../../../models/interfaces/skill';
 })
 export class SkillForm {
 
+  router: Router = inject(Router);
   skillService: SkillService = inject(SkillService);
 
   skillFormObj: skillForm = {
@@ -27,7 +29,8 @@ export class SkillForm {
         this.skillFormObj = {
           name: ""
         }
-        console.log(res)
+        
+        this.router.navigate(['/app/list-skill'])
       },
       error: (err) => {
         console.log(err);
