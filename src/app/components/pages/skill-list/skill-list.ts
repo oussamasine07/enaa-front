@@ -28,4 +28,13 @@ export class SkillList implements OnInit {
       })
   }
 
+  deleteSkill (id: number | null) {
+    this.skills = this.skills.filter( s => s.id != id );
+    this.skillService.deleteSkill( id ).subscribe({
+      next: (res) => {
+        console.log( res );
+      }
+    })
+  }
+
 }

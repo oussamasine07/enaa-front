@@ -23,6 +23,11 @@ export class SkillService {
               })
             );
   }
+
+  deleteSkill (id: number | null) {
+    console.log('this is skill is deleted');
+    return this.httpClient.delete(`http://localhost:8082/api/v1/skill/${id}`);
+  }
   
   
 }
