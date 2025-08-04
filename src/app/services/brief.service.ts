@@ -13,7 +13,7 @@ export interface Brief {
 })
 export class BriefService {
   // URL de l'API backend
-  private apiUrl = 'http://localhost:8080/briefs';
+  private apiUrl = 'http://localhost:8081/briefs';
 
   constructor(private http: HttpClient) { }
 
