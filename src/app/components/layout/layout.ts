@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Sidebar } from '../partials/sidebar/sidebar';
 import { Navbar } from '../partials/navbar/navbar';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -12,6 +12,16 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './layout.html',
   styleUrl: './layout.css'
 })
-export class Layout {
+export class Layout implements OnInit {
+
+  router: Router = inject(Router);
+
+  token: string | null = localStorage.getItem("token");
+
+  ngOnInit(): void {
+    if (!this.token) {
+      this.router.navigate(["/login"]);
+    }
+  }
 
 }

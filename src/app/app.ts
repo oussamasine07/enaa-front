@@ -1,15 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { BriefFormComponent } from './components/pages/brief-form/brief-form.component';
-
-import {Register} from './components/pages/auth/register/register';
-
 @Component({
   selector: 'app-root',
   imports: [
-    RouterOutlet, 
-    Register, BriefFormComponent
+    RouterOutlet
   ],
 
   templateUrl: './app.html',
@@ -18,3 +13,4 @@ import {Register} from './components/pages/auth/register/register';
 export class App {
   protected title = 'enaa-front';
 }
+
