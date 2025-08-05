@@ -1,0 +1,78 @@
+
+
+.container {
+  max-width: 600px;
+  margin: 0 ;
+  
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+select, textarea, input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+select:focus, textarea:focus, input[type="text"]:focus {
+  outline: none;
+  border-color: #e6a823;
+}
+
+.link-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.link-input input[type="text"] {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.plus-icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-color: #e6a823;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 32px;
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #e6a823;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 8px;
+}
+
+button:hover {
+  background-color: #d4951a;
+}

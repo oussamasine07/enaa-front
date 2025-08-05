@@ -1,0 +1,47 @@
+<div class="all">
+  <div class="container">
+    
+    <!-- Select pour choisir un brief -->
+    <label for="brief-select">Choisir un brief :</label>
+    <select 
+      id="brief-select" 
+      (change)="onBriefSelected($event)"
+      [value]="selectedBriefId">
+      
+      <!-- Option par défaut -->
+      <option value="0">-- Sélectionnez un brief --</option>
+      
+      <!-- Options générées depuis les briefs du backend -->
+      <option 
+        *ngFor="let brief of briefs" 
+        [value]="brief.id">
+        {{ brief.title }} - {{ brief.engagement }}
+      </option>
+    </select>
+
+    <!-- Champ pour le message -->
+    <label for="message">Message :</label>
+    <textarea 
+      id="message" 
+      rows="5" 
+      placeholder="Écris ton message ici..."
+      [(ngModel)]="message">
+    </textarea>
+
+    <!-- Champ pour le lien -->
+    <label for="link">Lien :</label>
+    <div class="link-input">
+      <input 
+        type="text" 
+        id="link" 
+        placeholder="Colle ton lien ici"
+        [(ngModel)]="link" />
+      <div class="plus-icon">+</div>
+    </div>
+
+    <!-- Bouton de soumission -->
+    <button (click)="onSubmit()">
+      Soumettre le rendu
+    </button>
+  </div>
+</div>

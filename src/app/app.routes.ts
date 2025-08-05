@@ -6,6 +6,7 @@ import { BriefFormComponent } from './components/pages/brief-form/brief-form.com
 import { SkillForm } from './components/pages/skill-form/skill-form';
 import { SkillList } from './components/pages/skill-list/skill-list';
 import { Login } from './components/pages/auth/login/login';
+import { Rendu } from './components/pages/rendu/rendu';
 
   
 export const routes: Routes = [
@@ -28,8 +29,11 @@ export const routes: Routes = [
             {
                 path: "list-skill",
                 component: SkillList
+            },
+            {
+                path:'rendu',
+                component:Rendu
             }
-        
         ]
     },
     {
