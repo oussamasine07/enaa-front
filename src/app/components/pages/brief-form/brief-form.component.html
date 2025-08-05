@@ -1,132 +1,95 @@
 <div class="brief-container">
   <div class="brief-card">
-    <div class="brief-header">
-      <h1 class="brief-title">Créer un Brief</h1>
-      <p class="brief-subtitle">Définissez les détails de votre projet</p>
-    </div>
+    <h1 class="brief-title">Brief</h1>
 
     <form [formGroup]="briefForm" (ngSubmit)="onSubmit()" class="brief-form">
-      <div class="form-section">
-        <h3 class="section-title">Informations générales</h3>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="titre" class="form-label">Titre du projet</label>
-            <input 
-              type="text" 
-              id="titre" 
-              formControlName="titre"
-              class="form-input"
-              placeholder="Entrez le titre de votre projet"
-              [class.error]="briefForm.get('titre')?.invalid && briefForm.get('titre')?.touched"
-            >
-            <div class="error-message" *ngIf="getFieldError('titre')">
-              {{ getFieldError('titre') }}
-            </div>
-          </div>
-          
-          <div class="form-group">
-            <label for="engagement" class="form-label">Type d'engagement</label>
-            <input 
-              type="text" 
-              id="engagement" 
-              formControlName="engagement"
-              class="form-input"
-              placeholder="Ex: Freelance, CDI, Mission"
-              [class.error]="briefForm.get('engagement')?.invalid && briefForm.get('engagement')?.touched"
-            >
-            <div class="error-message" *ngIf="getFieldError('engagement')">
-              {{ getFieldError('engagement') }}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-section">
-        <h3 class="section-title">Planification</h3>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="dateDebut" class="form-label">Date de début</label>
-            <input 
-              type="date" 
-              id="dateDebut" 
-              formControlName="dateDebut"
-              class="form-input"
-              [class.error]="briefForm.get('dateDebut')?.invalid && briefForm.get('dateDebut')?.touched"
-            >
-            <div class="error-message" *ngIf="getFieldError('dateDebut')">
-              {{ getFieldError('dateDebut') }}
-            </div>
-          </div>
-          
-          <div class="form-group">
-            <label for="dateFin" class="form-label">Date de fin</label>
-            <input 
-              type="date" 
-              id="dateFin" 
-              formControlName="dateFin"
-              class="form-input"
-              [class.error]="briefForm.get('dateFin')?.invalid && briefForm.get('dateFin')?.touched"
-            >
-            <div class="error-message" *ngIf="getFieldError('dateFin')">
-              {{ getFieldError('dateFin') }}
-            </div>
-          </div>
-          
-          <div class="form-group form-group-small">
-            <label for="duree" class="form-label">Durée (jours)</label>
-            <input 
-              type="number" 
-              id="duree" 
-              formControlName="duree"
-              class="form-input"
-              placeholder="30"
-              min="1"
-              [class.error]="briefForm.get('duree')?.invalid && briefForm.get('duree')?.touched"
-            >
-            <div class="error-message" *ngIf="getFieldError('duree')">
-              {{ getFieldError('duree') }}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-section">
-        <h3 class="section-title">Description du projet</h3>
+      <div class="form-row">
         <div class="form-group">
-          <label for="description" class="form-label">Description détaillée</label>
-          <textarea 
-            id="description" 
-            formControlName="description"
-            class="form-textarea"
-            rows="6"
-            placeholder="Décrivez votre projet, les objectifs, les livrables attendus..."
-            [class.error]="briefForm.get('description')?.invalid && briefForm.get('description')?.touched"
-          ></textarea>
-          <div class="character-count">
-            {{ briefForm.get('description')?.value?.length || 0 }} caractères
-          </div>
-          <div class="error-message" *ngIf="getFieldError('description')">
-            {{ getFieldError('description') }}
-          </div>
+          <input
+            type="text"
+            id="title"
+            formControlName="title"
+            class="form-input"
+            placeholder="Title"
+          >
+          <div class="error" *ngIf="getFieldError('title')">{{ getFieldError('title') }}</div>
+        </div>
+
+        <div class="form-group">
+          <label for="engagement" class="sr-only">Engagement</label>
+          <select
+            id="engagement"
+            formControlName="engagement"
+            class="form-input"
+          >
+            <option value="" disabled selected>Select Engagement</option>
+            <option *ngFor="let eng of engagements" [value]="eng">{{ eng }}</option>
+          </select>
+          <div class="error" *ngIf="getFieldError('engagement')">{{ getFieldError('engagement') }}</div>
         </div>
       </div>
 
-      <div class="form-actions">
-        <button type="button" class="btn-secondary" (click)="resetForm()">
-          Réinitialiser
-        </button>
-        <button 
-          type="submit" 
-          class="btn-primary"
-          [disabled]="isSubmitting"
-        >
-          <span *ngIf="!isSubmitting">Créer le Brief</span>
-          <span *ngIf="isSubmitting">
-            <span class="spinner"></span>
-            Création en cours...
-          </span>
-        </button>
+      <div class="form-row">
+        <div class="form-group">
+          <input
+            type="text"
+            id="startDate"
+            formControlName="startDate"
+            class="form-input"
+            placeholder="Start Date"
+            onfocus="(this.type='date')"
+            onblur="if(!this.value)this.type='text'"
+          >
+          <div class="error" *ngIf="getFieldError('startDate')">{{ getFieldError('startDate') }}</div>
+        </div>
+
+        <div class="form-group">
+          <input
+            type="text"
+            id="endDate"
+            formControlName="endDate"
+            class="form-input"
+            placeholder="End Date"
+            onfocus="(this.type='date')"
+            onblur="if(!this.value)this.type='text'"
+          >
+          <div class="error" *ngIf="getFieldError('endDate')">{{ getFieldError('endDate') }}</div>
+        </div>
       </div>
+
+      <div class="form-group">
+        <textarea
+          id="description"
+          formControlName="description"
+          class="form-textarea"
+          rows="8"
+          placeholder="Description"
+        ></textarea>
+        <div class="error" *ngIf="getFieldError('description')">{{ getFieldError('description') }}</div>
+      </div>
+
+      <div class="form-row duration-row">
+        <div class="form-group duration-group">
+          <input
+            type="number"
+            id="duration"
+            formControlName="duration"
+            class="form-input"
+            placeholder="Duration"
+            min="1"
+          >
+          <div class="error" *ngIf="getFieldError('duration')">{{ getFieldError('duration') }}</div>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="btn-create"
+        [disabled]="isSubmitting"
+      >
+        <span *ngIf="!isSubmitting">Créer</span>
+        <span *ngIf="isSubmitting">Création...</span>
+      </button>
     </form>
   </div>
 </div>
